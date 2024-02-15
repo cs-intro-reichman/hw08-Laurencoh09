@@ -41,6 +41,7 @@ class PlayList {
             tracks[size] = track;
             this.size++;
         }
+        
         return true;
     }
 
@@ -53,7 +54,7 @@ class PlayList {
             data += "\n" + (tracks[j].toString());
             }
         }
-        return "";
+        return data;
     }
 
     /** Removes the last track from this list. If the list is empty, does nothing. */
@@ -68,9 +69,9 @@ class PlayList {
     public int totalDuration() {
            int totalDuration = 0;
         for (int j = 0; j < this.getSize(); j++) {
-            totalDuration += (tracks[i].getDuration());
+            totalDuration += (tracks[j].getDuration());
         }
-        return 0;
+        return totalDuration;
     }
 
     /** Returns the index of the track with the given title in this list.
@@ -79,6 +80,8 @@ class PlayList {
         for (int j = 0; j < this.getSize(); j++) {
             if (title == (tracks[j].getTitle()))
                 return j;
+
+        }
         return -1;
     }
 
@@ -98,8 +101,7 @@ class PlayList {
         tracks[j] = track;
         return true;
     }
-        return false;
-    }
+
      
     /** Removes the track in the given index from this list.
      *  If the list is empty, or the given index is negative or too big for this list, 
@@ -118,9 +120,9 @@ class PlayList {
      *  is negative or too big for this list, does nothing. */
     public void remove(String title) {
        for (int j = 0; j < this.getSize(); j++) {
-            if (title == tracks[i].getTitle())
+            if (title == tracks[j].getTitle())
                 this.remove(j);
-
+       }
     }
 
     /** Removes the first track from this list. If the list is empty, does nothing. */
@@ -136,8 +138,9 @@ class PlayList {
          if (this.getSize() + other.getSize() <= this.getMaxSize()) {
         for (int j = 0; j < other.getSize(); j++) {
                 this.add(other.getTrack(j));
-    }
-
+        }
+         }
+     }    
     /** Returns the index in this list of the track that has the shortest duration,
      *  starting the search in location start. For example, if the durations are 
      *  7, 1, 6, 7, 5, 8, 7, then min(2) returns 4, since this the index of the 
