@@ -130,7 +130,7 @@ class PlayList {
       if (this.getSize() > 0) {
             this.remove(0);
     }
-    
+    }
     /** Adds all the tracks in the other list to the end of this list. 
      *  If the total size of both lists is too large, does nothing. */
     //// An elegant and terribly inefficient implementation.
