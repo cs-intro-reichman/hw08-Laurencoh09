@@ -4,7 +4,7 @@ class Track {
     private String title;
     private String artist;
     private int duration;
-
+    
     /** Constructs a track from the given values. */
     public Track(String title, String artist, int duration) {
         this.title = title;
